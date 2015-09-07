@@ -5,7 +5,7 @@ setup(
     name="classifier",
     version="0.1",
     description="Text classification library.",
-    url="https://github.com/VaclavDedik/masters-thesis/classifier",
+    url="https://github.com/VaclavDedik/classifier",
     keywords="classifier machine_learning text",
     license="MIT",
 
@@ -14,9 +14,9 @@ setup(
 
     packages=find_packages(),
     install_requires=[
-        'numpy',
-        'nltk',
-        'scipy',
-        'scikit-learn'
+        'numpy>=1.8.0rc1',
+        'nltk>=3.0.4',
+        'scipy>=0.14.1',
+        'scikit-learn>=0.16.1'
     ],
 )
