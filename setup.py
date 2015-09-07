@@ -14,9 +14,9 @@ setup(
 
     packages=find_packages(),
     install_requires=[
-        'numpy>=1.8.0rc1',
+        'numpy>=1.7.1', # at least 1.8.0rc1 recommended
         'nltk>=3.0.4',
-        'scipy>=0.14.1',
+        'scipy>=0.12.1',  # at least 0.14.1 recommended
         'scikit-learn>=0.16.1'
     ],
 )
