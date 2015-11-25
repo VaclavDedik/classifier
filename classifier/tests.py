@@ -15,6 +15,32 @@ def accuracy(model, documents_cv, n=1):
     return tpn/float(n_cv)
 
 
+def accuracy_by_labels(model, documents_cv):
+    """Computes accuracy of the model by labels.
+
+    :param model: Prediction model.
+    :param documents_cv: List of documents.
+    """
+    accuracies = {}
+    counts = {}
+    for doc in documents_cv:
+        hit = 0
+        if doc.label in model.predict(doc):
+            hit = 1
+
+        if doc.label in accuracies:
+            accuracies[doc.label] += hit
+            counts[doc.label] += 1
+        else:
+            accuracies[doc.label] = hit
+            counts[doc.label] = 1
+
+    for label, hits in accuracies.items():
+        accuracies[label] = hits/float(counts[label])
+
+    return accuracies
+
+
 def precision_and_recall(model, documents_cv):
     """Computes macro average precision and recall.
 
