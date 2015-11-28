@@ -86,7 +86,7 @@ class BasicSelector(AbstractSelector):
         title = document.title if document.title else ""
         content = document.content if document.content else ""
         words = title + "\n" + content
-        return np.array(self.count_vect.transform([words]).todense())
+        return np.array(self.count_vect.transform([words]).todense())[0]
 
     def _build_labels(self, documents):
         """Builds labels by sorting all unique occurrences of labels in all
